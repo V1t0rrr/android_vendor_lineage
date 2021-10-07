@@ -2,4 +2,5 @@
 PRODUCT_PACKAGES += \
     NavigationBarNoHintOverlay \
     AOSPSettings \
-    AOSPSystemUI
+    AOSPSystemUI \
+    AOSPFrameworksOverlay

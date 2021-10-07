@@ -5,6 +5,9 @@ PRODUCT_BRAND ?= LineageOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
+# Fonts
+include vendor/lineage/config/fonts.mk
+
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=android-google
@@ -81,6 +84,9 @@ PRODUCT_COPY_FILES += \
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
+
+# Include GMS, Modules, and Pixel features.
+$(call inherit-product, vendor/google/gms/config.mk)
 
 # Include AOSP audio files
 include vendor/lineage/config/aosp_audio.mk
